@@ -74,14 +74,14 @@ export default class XSafe extends MixinRedux(XElement) {
 
     listeners() {
         return {
-            'x-accounts-create': async () => (await accountManager).create(),
-            'x-accounts-import': async () => (await accountManager).import(),
+            'x-accounts-create': () => accountManager.create(),
+            'x-accounts-import': () => accountManager.import(),
             'click button[new-tx]': this._clickedNewTransaction.bind(this),
             'x-send-transaction': this._signTransaction.bind(this),
             'x-send-transaction-confirm': this._sendTransactionNow.bind(this),
             'x-account-modal-new-tx': this._clickedNewTransaction.bind(this),
-            'x-account-modal-export': async (a) => (await accountManager).export(a),
-            'x-account-modal-rename': async (a) => (await accountManager).rename(a)
+            'x-account-modal-export': (a) => accountManager.export(a),
+            'x-account-modal-rename': (a) => accountManager.rename(a)
         }
     }
 
@@ -103,7 +103,7 @@ export default class XSafe extends MixinRedux(XElement) {
         tx.validityStartHeight = parseInt(tx.validityStartHeight) || this.properties.height;
         tx.recipient = 'NQ' + tx.recipient;
 
-        const signedTx = await (await accountManager).sign(tx);
+        const signedTx = await accountManager.sign(tx);
 
         // Show textform TX to the user and require explicit click on the "SEND NOW" button
         XSendTransactionPlainConfirmModal.instance.transaction = signedTx;
