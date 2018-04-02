@@ -32,15 +32,19 @@ export default class XSafe extends MixinRedux(XElement) {
                 You are connecting to the Nimiq Testnet. Please <strong>do not</strong> use your Mainnet accounts in the Testnet!
             </div>
             <header>
-                <div class="header-top">
-                    <div class="nimiq-app-name">
-                        <nimiq-logo>NIMIQ <strong>SAFE</strong><sup>BETA</sup></nimiq-logo>
+                <div class="header-top-container">
+                    <div class="header-top">
+                        <div class="nimiq-app-name">
+                            <nimiq-logo>NIMIQ <strong>SAFE</strong><sup>BETA</sup></nimiq-logo>
+                        </div>
+                        <nav class="secondary-links">
+                            <a href="https://miner.nimiq-testnet.com">Miner</a>
+                            <a href="https://nimiq.com/faq">FAQ</a>
+                            <a href="https://medium.com/nimiq-network">Blog</a>
+                            <a href="https://nimiq.com">Homepage</a>
+                            <!-- <a href="https://nimiq.com/explorer">Explorer</a> -->
+                        </nav>
                     </div>
-                    <nav class="secondary-links">
-                        <!-- <a href="https://nimiq.com">Homepage</a> -->
-                        <!-- <a href="https://medium.com/nimiq-network">Blog</a> -->
-                        <!-- <a href="https://nimiq.com/explorer">Explorer</a> -->
-                    </nav>
                 </div>
                 <x-total-amount></x-total-amount>
                 <div class="header-bottom">

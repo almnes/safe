@@ -38,7 +38,7 @@ header {
     width: 100%;
     background: var(--primary-background-toright);
     text-align: center;
-    padding: 0 0.5em;
+    padding: 0;
     /* border-bottom: 3px solid var(--success-color); */
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12),
@@ -51,8 +51,13 @@ header {
     margin: 0 auto;
 }
 
+.header-top-container {
+    background: rgba(0,0,0,0.1);
+    margin-bottom: 2em;
+}
+
 .header-top {
-    padding: 1em 1.8em;
+    padding: 0.8em 1.8em;
     overflow: auto;
 }
 
@@ -66,11 +71,13 @@ nimiq-logo {
 
 .secondary-links {
     float: right;
+    padding-top: 5px;
 }
 
 .secondary-links a {
     display: inline-block;
-    margin-left: 0.5em;
+    margin-left: 2.5em;
+    font-size: 0.9em;
 }
 
 x-total-amount {
@@ -202,6 +209,10 @@ footer a {
 
     nav.actions {
         float: none;
+    }
+
+    nav.secondary-links {
+        display: none;
     }
 }
 
